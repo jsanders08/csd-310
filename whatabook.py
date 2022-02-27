@@ -118,13 +118,13 @@ def add_book_to_wishlist(_cursor, _user_id, _book_id):
 try:
     
 
-    db = mysql.connector.connect(**config) # connect to the WhatABook database 
+    db = mysql.connector.connect(**config)  
 
-    cursor = db.cursor() # cursor for MySQL queries
+    cursor = db.cursor() 
 
     print("\n  Welcome to the WhatABook Portal! ")
 
-    user_selection = show_menu() # show the main menu 
+    user_selection = show_menu() 
 
     
     while user_selection != 4:
@@ -159,20 +159,20 @@ try:
                  
                     add_book_to_wishlist(cursor, my_user_id, book_id)
 
-                    db.commit() # commit the changes to the database 
+                    db.commit() 
 
                     print("\n        Book id: {} was added to your wishlist!".format(book_id))
 
                 
                 if account_option < 0 or account_option > 3:
-                    print("\n      Invalid option, please retry...")
+                    print("\n      Invalid option, please try again...")
 
                 
                 account_option = show_account_menu()
         
         
         if user_selection < 0 or user_selection > 4:
-            print("\n      Invalid option, please retry...")
+            print("\n      Invalid option, please try again...")
             
         
         user_selection = show_menu()
@@ -183,7 +183,7 @@ except mysql.connector.Error as err:
     
 
     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-        print("  The supplied username or password are invalid")
+        print("  The username or password are invalid")
 
     elif err.errno == errorcode.ER_BAD_DB_ERROR:
         print("  The specified database does not exist")
