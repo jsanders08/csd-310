@@ -1,4 +1,4 @@
-CREATE USER 'whatabook_user'@'localhost' IDENTIFIED WITH mysql_native_password BY '$3LfB3l1ef';
+CREATE USER 'whatabook_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'MySQL8IsGreat!';
 GRANT ALL PRIVILEGES ON whatabook.* TO'whatabook_user'@'localhost';
 
 CREATE TABLE store (
